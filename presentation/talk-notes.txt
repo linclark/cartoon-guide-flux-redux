@@ -1,0 +1,39 @@
+Hi I'm Lynn Clark.  I'm going to be talking about flux and redox which are silly names for really useful things. It's really easy to get lost in the jargon around these patterns though, so I have included some illustrations that should help you out. And I have a lot to cover so I'm just going to jump right into it.
+
+ First, let's look at the problem that both of these patterns are meant to help with. Now imagine that your application has some data, and imagine that you want to present that data to the user and something like a graph. we will call the thing that holds the data the model, and the thing that presents the data to the user the view. When the user fires up your app, data is going to flow from the model to the view which will process it.
+
+(If you're familiar with MVC, I'm omitting the controller here because it doesn't affect this too much).
+
+ Now what if some of these models had information that the other models need. And what if a change in one model meant that changes need to be made to other models. And what of interaction with a view meant that the model changed. It starts to get pretty tricky to trace how you get from one state of your application to the next.
+
+ What Flux does is make it easier to trace through the state changes in your app. It does this in part by making the dataflow unidirectional.
+
+If you read the Flux documentation, you'll see a diagram that shows that. if you already understand what is going on in flux, then this diagram probably makes sense to you. I don't know about you all, but when I was coming to Fluxwithout any idea of how this worked, this diagram made no sense to me. These are just boxes with different labels. How does one box act differently than the other box?
+
+ Instead, I like to think about the flux architecture as a group of characters or working together as a team to take on a task. So let me introduce those characters.
+
+ ## Action creators
+
+ Your action creators know about all the different ways that your state can change. They also know what data needs to be collected in order to make this the change. For example, if you wanted to be able to mark a message as read, you would add a new action to your action creators file.
+
+ The neat thing about this is that it collects all of the possible state changes that your app can go through and bundles them together in one place. These action creators provide you with a concise list of possible state changes.
+
+ When called, the action creator is going to create an action, which is basically a message that has two pieces of data. First it has the type of action. This corresponds with a state change. Next it has the data that's required for your application to move to the new state.
+
+ ```
+ createMessage: function(text) {
+  AppDispatcher.dispatch({
+    type: ActionTypes.MESSAGE_CREATE,
+    text: text
+  })
+ }
+ ```
+The action creator then sends off this message to the dispatcher.
+
+## The dispatcher
+
+ The dispatcher is just a registry of callbacks. It's kind of like a switchboard, it keeps track of all the things that should be notified when action happens. And those things that it notifies are stores.
+
+ ## Stores
+
+  The only way the data in the store can change is if the dispatcher sends it an action using the callback that the store registered with the dispatcher. There's no way in besides that. Because there are no setters on the store and the data is maintained as private variables, there's no way for other parts of the system to change the store's data. The stores contain all of the logic for altering state in the application.
