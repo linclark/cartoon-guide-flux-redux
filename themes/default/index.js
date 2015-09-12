@@ -15,7 +15,6 @@ module.exports = {
   fonts: fonts,
   global: {
     body: {
-      background: colors.primary,
       fontFamily: fonts.primary,
       fontWeight: "normal",
       fontSize: "2em",
@@ -29,7 +28,13 @@ module.exports = {
       boxSizing: "border-box"
     },
     ".card": {
-      
+      backgroundSize: "contain",
+      backgroundRepeat: "no-repeat",
+      height: "1000px",
+      width: "100%"
+    },
+    ".card .details": {
+      paddingLeft: "325px",
     }
   },
   progress: {

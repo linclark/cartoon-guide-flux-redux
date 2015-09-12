@@ -5,12 +5,15 @@ import {
   Heading, Image, Layout, Link, ListItem, List, Quote, Slide, Text
 } from "../src/spectacle";
 
+import {
+  CharacterCard
+} from "../src/custom-components/components";
+
 import preloader from "../src/utils/preloader";
 
 import Interactive from "./interactive";
 
 const images = {
-  card: require("./character-card.png"),
   store: require("./store.png")
 };
 
@@ -21,18 +24,12 @@ export default class extends React.Component {
     return (
       <Deck transition={["fade"]} transitionDuration={800}>
         <Slide>
-          <div className="card">
-          <Appear>
-            <Heading>The Store</Heading>
-            <Image src={images.store}></Image>
-            <List>
-              <Appear><ListItem transition={["fade"]}>Inline style based theme system</ListItem></Appear>
-              <Appear><ListItem>Autofit Text</ListItem></Appear>
-              <Appear><ListItem>react-router navigation</ListItem></Appear>
-              <Appear><ListItem>PDF Export</ListItem></Appear>
-            </List>
-          </Appear>
-          </div>
+          <CharacterCard image={images.store}>
+            <ListItem>one</ListItem>
+            <ListItem>two</ListItem>
+          </CharacterCard>
+        </Slide>
+        <Slide>
         </Slide>
         <Slide>
           <Heading size={1} fit textColor="primary" textFont="secondary">
