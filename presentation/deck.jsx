@@ -20,6 +20,7 @@ const images = {
   modelView1: require("./model-view1.png"),
   modelView2: require("./model-view2.png"),
   modelView3: require("./model-view3.png"),
+  fluxDiagram: require("./flux-diagram.png"),
   store: require("./store.png")
 };
 
@@ -41,6 +42,9 @@ export default class extends React.Component {
             <Appear><Image src={images.modelView2} /></Appear>
             <Appear><Image src={images.modelView3} /></Appear>
           </div>
+        </Slide>
+        <Slide>
+          <Image src={images.fluxDiagram} />
         </Slide>
         <Slide>
           <CharacterCard image={images.store}>
