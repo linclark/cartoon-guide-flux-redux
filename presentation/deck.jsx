@@ -14,6 +14,7 @@ import preloader from "../src/utils/preloader";
 import Interactive from "./interactive";
 
 const images = {
+  title: require("./title.png"),
   messageNotificationOff: require("./message-notification-off.png"),
   messageNotificationOn: require("./message-notification-on.png"),
   modelView1: require("./model-view1.png"),
@@ -29,6 +30,9 @@ export default class extends React.Component {
     return (
       <Deck transition={["fade"]} transitionDuration={800}>
         <Slide>
+          <Image src={images.title} />
+        </Slide>
+        <Slide>
           <div className="image-layer">
             <Heading size={2}>The Problem</Heading>
             <Appear><Image src={images.messageNotificationOff} /></Appear>
@@ -43,24 +47,6 @@ export default class extends React.Component {
             <ListItem>one</ListItem>
             <ListItem>two</ListItem>
           </CharacterCard>
-        </Slide>
-        <Slide>
-        </Slide>
-        <Slide>
-          <Heading size={1} fit textColor="primary" textFont="secondary">
-            Wait What?
-          </Heading>
-        </Slide>
-        <Slide textColor="black" align="center top">
-          <Heading size={1} textColor="black" textFont="primary">
-            Thats right
-          </Heading>
-          <List>
-            <ListItem>Inline style based theme system</ListItem>
-            <ListItem>Autofit Text</ListItem>
-            <ListItem>react-router navigation</ListItem>
-            <ListItem>PDF Export</ListItem>
-          </List>
         </Slide>
       </Deck>
     );
