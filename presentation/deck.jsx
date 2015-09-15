@@ -6,7 +6,8 @@ import {
 } from "../src/spectacle";
 
 import {
-  CharacterCard
+  CharacterCard,
+  ImageLayer
 } from "../src/custom-components/components";
 
 import preloader from "../src/utils/preloader";
@@ -34,14 +35,14 @@ export default class extends React.Component {
           <Image src={images.title} />
         </Slide>
         <Slide>
-          <div className="image-layer">
-            <Heading size={2}>The Problem</Heading>
-            <Appear><Image src={images.messageNotificationOff} /></Appear>
-            <Appear><Image src={images.messageNotificationOn} /></Appear>
-            <Appear><Image src={images.modelView1} /></Appear>
-            <Appear><Image src={images.modelView2} /></Appear>
-            <Appear><Image src={images.modelView3} /></Appear>
-          </div>
+          <Heading size={2}>The Problem</Heading>
+          <ImageLayer height="535px" width="700px">
+            <Image src={images.messageNotificationOff} />
+            <Image src={images.messageNotificationOn} />
+            <Image src={images.modelView1} />
+            <Image src={images.modelView2} />
+            <Image src={images.modelView3} />
+          </ImageLayer>
         </Slide>
         <Slide>
           <Image src={images.fluxDiagram} />

@@ -34,22 +34,13 @@ module.exports = {
       width: "100%"
     },
     ".card .details": {
-      paddingLeft: "325px",
+      paddingLeft: "325px"
     },
-    ".image-layer img": {
+    ".image-layer": {
       position: "relative"
     },
-    ".image-layer div + div": {
-      position: "relative", top: "-535px"
-    },
-    ".image-layer div + div + div": {
-      position: "relative", top: "calc(2 * -535px)"
-    },
-    ".image-layer div + div + div + div": {
-      position: "relative", top: "calc(3 * -535px)"
-    },
-    ".image-layer div + div + div + div + div": {
-      position: "relative", top: "calc(4 * -535px)"
+    ".image-layer img": {
+      position: "absolute", left: "0"
     }
   },
   progress: {
