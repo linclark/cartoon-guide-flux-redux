@@ -35,6 +35,21 @@ module.exports = {
     },
     ".card .details": {
       paddingLeft: "325px",
+    },
+    ".image-layer img": {
+      position: "relative"
+    },
+    ".image-layer div + div": {
+      position: "relative", top: "-535px"
+    },
+    ".image-layer div + div + div": {
+      position: "relative", top: "calc(2 * -535px)"
+    },
+    ".image-layer div + div + div + div": {
+      position: "relative", top: "calc(3 * -535px)"
+    },
+    ".image-layer div + div + div + div + div": {
+      position: "relative", top: "calc(4 * -535px)"
     }
   },
   progress: {
@@ -172,12 +187,13 @@ module.exports = {
         zoom: 1
       },
       h2: {
-        color: colors.secondary,
+        color: colors.tertiary,
         fontSize: "5.88em",
         fontFamily: fonts.primary,
         lineHeight: 1,
         fontWeight: "bold",
-        margin: 0
+        margin: "0",
+        marginBottom: ".3em"
       },
       h3: {
         color: "black",
@@ -213,8 +229,7 @@ module.exports = {
       }
     },
     image: {
-      display: "block",
-      margin: "0.5em auto"
+      display: "block"
     },
     link: {
       textDecoration: "none"
