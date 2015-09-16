@@ -40,7 +40,8 @@ module.exports = {
       position: "relative"
     },
     ".image-layer img": {
-      position: "absolute", left: "0"
+      position: "absolute", left: "0",
+      width: "100%"
     }
   },
   progress: {

@@ -25,6 +25,14 @@ const images = {
   store: require("./store.png")
 };
 
+let interactionImages = [];
+for (let i = 0; i < 8; i++) {
+  interactionImages.push(require(`./setup-${i}.png`));
+}
+for (let i = 0; i < 12; i++) {
+  interactionImages.push(require(`./step-${i}.png`));
+}
+
 preloader([images.city, images.kat]);
 
 export default class extends React.Component {
@@ -52,6 +60,14 @@ export default class extends React.Component {
             <ListItem>one</ListItem>
             <ListItem>two</ListItem>
           </CharacterCard>
+        </Slide>
+        <Slide>
+          <ImageLayer height="535px" width="700px">
+            {interactionImages.map(src => {
+              return (<Image src={src} />)
+            })
+          }
+          </ImageLayer>
         </Slide>
       </Deck>
     );
