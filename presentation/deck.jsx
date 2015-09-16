@@ -22,7 +22,10 @@ const images = {
   modelView2: require("./model-view2.png"),
   modelView3: require("./model-view3.png"),
   fluxDiagram: require("./flux-diagram.png"),
-  store: require("./store.png")
+  action: require("./action.png"),
+  dispatcher: require("./dispatcher.png"),
+  store: require("./store.png"),
+  view: require("./view.png")
 };
 
 let interactionImages = [];
@@ -56,9 +59,28 @@ export default class extends React.Component {
           <Image src={images.fluxDiagram} />
         </Slide>
         <Slide>
-          <CharacterCard image={images.store}>
-            <ListItem>one</ListItem>
-            <ListItem>two</ListItem>
+          <CharacterCard image={images.action} title="The Action Creator">
+            <ListItem>formats actions to send to the dispatcher</ListItem>
+            <ListItem>provides an API of all possible state changes</ListItem>
+          </CharacterCard>
+        </Slide>
+        <Slide>
+          <CharacterCard image={images.dispatcher} title="The Dispatcher">
+            <ListItem>registry of callbacks</ListItem>
+            <ListItem>moves actions from creator to stores</ListItem>
+            <ListItem>action is dispatched to every registered callback</ListItem>
+          </CharacterCard>
+        </Slide>
+        <Slide>
+          <CharacterCard image={images.store} title="The Store">
+            <ListItem>stores application state</ListItem>
+            <ListItem>all state-change logic lives here</ListItem>
+            <ListItem>no setters. only way in is actions</ListItem>
+          </CharacterCard>
+        </Slide>
+        <Slide>
+          <CharacterCard image={images.view} title="The Controller View and The View">
+            <ListItem>renders data that the store gives it</ListItem>
           </CharacterCard>
         </Slide>
         <Slide>

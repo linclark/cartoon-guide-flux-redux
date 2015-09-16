@@ -13,7 +13,7 @@ class CharacterCard extends Base {
     return (
       <div className="card" style={{backgroundImage: "url(" + this.props.image + ")"}}>
         <div className="details">
-          <Heading>The Store</Heading>
+          <Heading size={3}>{this.props.title}</Heading>
           <List>
             {React.Children.map(this.props.children, item => {
               return (

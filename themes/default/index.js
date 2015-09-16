@@ -6,8 +6,8 @@ const colors = {
 
 const fonts = {
   primary: "xkcd",
-  secondary: "Lobster Two",
-  tertiary: "monospace"
+  secondary: "xkcd",
+  tertiary: "xkcd"
 };
 
 module.exports = {
@@ -188,8 +188,8 @@ module.exports = {
         marginBottom: ".3em"
       },
       h3: {
-        color: "black",
-        fontSize: "4.9em",
+        color: colors.tertiary,
+        fontSize: "2.5em",
         fontFamily: fonts.secondary,
         lineHeight: 1,
         fontWeight: "bold",
